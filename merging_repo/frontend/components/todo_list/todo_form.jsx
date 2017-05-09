@@ -37,7 +37,7 @@ class TodoForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.submitHandler}>
+      <form onSubmit={this.submitHandler} className="todo-form">
         <label>Title:
           <input
             type="text"

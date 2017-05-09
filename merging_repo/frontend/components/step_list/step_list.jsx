@@ -8,7 +8,6 @@ class StepList extends React.Component{
   }
 
   render() {
-    console.log(this.props.steps)
     return (
       <div className='step-list'>
         <ul>

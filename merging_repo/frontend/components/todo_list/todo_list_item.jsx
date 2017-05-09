@@ -10,8 +10,8 @@ class TodoListItem extends React.Component {
   }
 
   updateTodo() {
-    let updatedTodo = this.props.todo;
-    updatedTodo.done = updatedTodo.done? false : true;
+    let updatedTodo = Object.assign({}, this.props.todo);
+    updatedTodo.done = !updatedTodo.done;
     this.props.receiveTodo(updatedTodo);
   }
 
@@ -31,8 +31,8 @@ class TodoListItem extends React.Component {
     }
     const doneString =  done? "Undo" : "Done";
     return (
-      <li>
-        <span onClick={this.updateDetail}>{title}</span>
+      <li className='todo-list-item'>
+        <h3 onClick={this.updateDetail}>{title}</h3>
         <button onClick={this.updateTodo}>{doneString}</button>
         {detailView}
       </li>

@@ -3,7 +3,7 @@ import TodoListItem from './todo_list_item';
 import TodoForm from './todo_form';
 
 const TodoList = ({ todos, receiveTodo, removeTodo }) => (
-  <div className = "todo-app">
+  <div className = "todo-list">
     <ul>
       {
         todos.map((todo, i) => <TodoListItem

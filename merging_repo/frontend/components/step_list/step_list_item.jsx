@@ -7,11 +7,9 @@ class StepListItem extends React.Component {
     this.remove = this.remove.bind(this);
   }
 
-  // componentWillReceiveProps() {debugger}
 
   updateStep() {
     let updatedStep = Object.assign({}, this.props.step);
-    // updatedStep.done = updatedStep.done? false : true;
     updatedStep.done = !updatedStep.done;
     this.props.receiveStep(updatedStep);
   }
@@ -25,11 +23,15 @@ class StepListItem extends React.Component {
     const doneString =  done? "Undo" : "Done";
 
     return (
-      <div>
-        <span>{title}</span>
-        <span>{body}</span>
-        <button onClick={this.updateStep}>{doneString}</button>
-        <button onClick={this.remove}>Remove Step</button>
+      <div className="step-list-item">
+        <div>
+          <h3>{title}</h3>
+          <p>{body}</p>
+        </div>
+        <aside>
+          <button onClick={this.updateStep}>{doneString}</button>
+          <button onClick={this.remove}>Delete</button>
+        </aside>
       </div>
   );
   }

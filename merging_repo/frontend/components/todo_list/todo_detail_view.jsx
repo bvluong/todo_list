@@ -14,8 +14,8 @@ class TodoDetailView extends React.Component {
   render() {
     const { id, body } = this.props;
     return (
-      <div>
-        <h3>{body}</h3>
+      <div className='todo-detail-view'>
+        <p>{body}</p>
         <StepListContainer todoId={id}/>
         <button onClick={this.remove}>Remove Todo</button>
       </div>
