@@ -29,7 +29,8 @@ class StepForm extends React.Component {
       id: uniqueId(),
       title: this.state.title,
       body: this.state.body,
-      done: false
+      done: false,
+      todo_id: this.props.todoId
     });
 
     this.setState({title: '', body: ''});

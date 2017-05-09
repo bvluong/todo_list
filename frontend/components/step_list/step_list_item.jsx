@@ -7,11 +7,12 @@ class StepListItem extends React.Component {
     this.remove = this.remove.bind(this);
   }
 
-  componentWillReceiveProps() {debugger}
+  // componentWillReceiveProps() {debugger}
 
   updateStep() {
-    let updatedStep = this.props.step;
-    updatedStep.done = updatedStep.done? false : true;
+    let updatedStep = Object.assign({}, this.props.step);
+    // updatedStep.done = updatedStep.done? false : true;
+    updatedStep.done = !updatedStep.done;
     this.props.receiveStep(updatedStep);
   }
 

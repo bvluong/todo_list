@@ -14,11 +14,13 @@ class StepList extends React.Component{
         <ul>
           {
             this.props.steps.map(
-              (step, i) => <StepListItemContainer key={step.id} step={step}/>
+              (step, i) => <StepListItemContainer key={i} step={step}/>
             )
           }
         </ul>
-        <StepForm receiveStep={this.props.receiveStep}/>
+        <StepForm
+          todoId={this.props.todoId}
+          receiveStep={this.props.receiveStep}/>
       </div>
     );
   }
