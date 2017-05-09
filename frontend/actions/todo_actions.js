@@ -19,13 +19,12 @@ export const removeTodo = (id) => ({
   id
 });
 
-export const fetchTodos = () => dispatch => {
+export const fetchTodos = () => dispatch => (
   TodoAPIUtil.fetchTodos()
-    .then(todos => dispatch(receiveTodos(todos)));
-};
+    .then(todos => dispatch(receiveTodos(todos)))
+);
 
-export const createTodo = (todo) => dispatch => {
-  debugger
+export const createTodo = (todo) => dispatch => (
   TodoAPIUtil.createTodo(todo)
-    .then(resTodo => dispatch(receiveTodo(resTodo)));
-};
+    .then(resTodo => dispatch(receiveTodo(resTodo)))
+);
