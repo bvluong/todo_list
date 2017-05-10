@@ -31,6 +31,7 @@ const stepsReducer = (state = initialState,action) => {
   let newState = {};
   switch (action.type) {
     case RECEIVE_STEPS:
+      newState = merge({}, state);
       action.steps.forEach( step => { newState[step.id] = step; } );
       return newState;
     case RECEIVE_STEP:

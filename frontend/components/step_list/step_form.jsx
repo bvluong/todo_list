@@ -25,15 +25,13 @@ class StepForm extends React.Component {
 
   submitHandler(e) {
     e.preventDefault();
-    this.props.receiveStep({
-      id: uniqueId(),
+    this.props.createStep({
       title: this.state.title,
       body: this.state.body,
-      done: false,
       todo_id: this.props.todoId
-    });
-
-    this.setState({title: '', body: ''});
+    })
+    .then( () => this.setState({title: '', body: ''})
+    );
   }
 
   render() {

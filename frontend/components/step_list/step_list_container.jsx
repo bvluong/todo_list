@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import StepList from './step_list';
-import { receiveStep } from '../../actions/step_actions';
+import { createStep, fetchSteps } from '../../actions/step_actions';
 import { stepsByToDoId } from '../../reducers/selector';
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,8 +11,9 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
-  receiveStep: step => dispatch(receiveStep(step))
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  fetchSteps: () => dispatch(fetchSteps(ownProps.todoId)),
+  createStep: step => dispatch(createStep(step))
 });
 
 const StepListContainer = connect(

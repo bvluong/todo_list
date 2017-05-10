@@ -4,18 +4,18 @@ class StepListItem extends React.Component {
   constructor(props) {
     super(props);
     this.updateStep = this.updateStep.bind(this);
-    this.remove = this.remove.bind(this);
+    this.removeStep = this.removeStep.bind(this);
   }
 
 
   updateStep() {
     let updatedStep = Object.assign({}, this.props.step);
     updatedStep.done = !updatedStep.done;
-    this.props.receiveStep(updatedStep);
+    this.props.updateStep(updatedStep);
   }
 
-  remove() {
-    this.props.removeStep(this.props.step.id);
+  removeStep() {
+    this.props.deleteStep(this.props.step.id);
   }
 
   render() {
@@ -30,7 +30,7 @@ class StepListItem extends React.Component {
         </div>
         <aside>
           <button onClick={this.updateStep}>{doneString}</button>
-          <button onClick={this.remove}>Delete</button>
+          <button onClick={this.removeStep}>Delete</button>
         </aside>
       </div>
   );

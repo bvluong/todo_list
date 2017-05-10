@@ -10,6 +10,20 @@ export const createTodo = (todo) => (
     url: 'api/todos',
     method: 'POST',
     data: { todo }
-    // whats an object?
+  })
+);
+
+export const updateTodo = (todo) => (
+  $.ajax({
+    url: `api/todos/${todo.id}`,
+    method: 'PATCH',
+    data: { todo }
+  })
+);
+
+export const deleteTodo = (id) => (
+  $.ajax({
+    url: `api/todos/${id}`,
+    method: 'delete',
   })
 );

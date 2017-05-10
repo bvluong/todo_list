@@ -12,7 +12,7 @@ class TodoListItem extends React.Component {
   updateTodo() {
     let updatedTodo = Object.assign({}, this.props.todo);
     updatedTodo.done = !updatedTodo.done;
-    this.props.receiveTodo(updatedTodo);
+    this.props.updateTodo(updatedTodo);
   }
 
   updateDetail() {
@@ -27,7 +27,7 @@ class TodoListItem extends React.Component {
       detailView = <TodoDetailView
         id={id}
           body={body}
-          removeTodo={this.props.removeTodo}/>;
+          deleteTodo={this.props.deleteTodo}/>;
     }
     const doneString =  done? "Undo" : "Done";
     return (

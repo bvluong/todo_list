@@ -1,23 +1,20 @@
 # == Schema Information
 #
-# Table name: todos
+# Table name: steps
 #
 #  id         :integer          not null, primary key
 #  title      :string           not null
 #  body       :string           not null
 #  done       :boolean          default("false")
+#  todo_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+require 'test_helper'
 
-one:
-  title: MyString
-  body: MyString
-  done: false
-
-two:
-  title: MyString
-  body: MyString
-  done: false
+class StepTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end

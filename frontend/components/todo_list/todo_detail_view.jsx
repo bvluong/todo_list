@@ -8,7 +8,7 @@ class TodoDetailView extends React.Component {
   }
 
   remove() {
-    this.props.removeTodo(this.props.id);
+    this.props.deleteTodo(this.props.id);
   }
 
   render() {
